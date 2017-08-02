@@ -14,6 +14,6 @@ Store.create(:name => 'Gastown', :annual_revenue => 430000, :mens_apparel => tru
 
 @mens_stores = Store.where :mens_apparel => true
 @mens_stores.each { |store| puts "#{store.name} annual revenue is #{store.annual_revenue}" }
-@womens_stores = Store.where "annual_revenue < 1000000 AND womens_apparel = true"
+@womens_stores = Store.where "annual_revenue < ? AND womens_apparel = ?", 1000000, true
 @womens_stores.each { |store| puts "#{store.name} annual revenue: #{store.annual_revenue} is below 1M" }
 
