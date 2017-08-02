@@ -10,3 +10,10 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+begin
+  store_name = gets.chomp.to_s
+  new_store = Store.create(name: store_name, annual_revenue: 10)
+  new_store.save!
+rescue Exception => errors
+  puts errors.message
+end
